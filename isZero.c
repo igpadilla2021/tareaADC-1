@@ -1,14 +1,13 @@
 # include <stdio.h>
 
 // FUNCION
-int isZero(int x) {
-    // Al aplicarse el operador not sobre un entero este retornara un 1 si este es 0, sino retorna un 0
+int isZero(int x){
+    // Al aplicarse el operador logico not sobre un entero este retornara un 1 si este es 0, sino retorna un 0
     return !x;
 }
 
 // TESTEO
-int main()
-{
+int main(){
     int n;
     //prueba de funcion con entero mayor que 0
     n=isZero(6);
