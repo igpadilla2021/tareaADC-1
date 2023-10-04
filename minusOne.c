@@ -12,6 +12,6 @@ int minusOne(){
 
 // TESTEO
 int main(){
-    printf("%d",minusOne()); 
+    printf("%d",minusOne());
     return 0;
 }
