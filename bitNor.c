@@ -6,6 +6,7 @@ int bitNor(int x, int y) {
 
 int main() {
     int x, y;
+    scanf("%d%d",&x,&y);
     int resultado = bitNor(x, y);
     printf("%d\n", res);
     
