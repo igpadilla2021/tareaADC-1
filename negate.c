@@ -7,6 +7,5 @@ int negate(int x) {
 }
 
 int main(){
-    printf("%d\n",0xff);
-    printf("%d\n",negate(0xff));
+    printf("%d\n",negate(-2));
 }
