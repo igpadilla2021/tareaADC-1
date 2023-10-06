@@ -4,5 +4,5 @@ int isPower2(int x) {
 }
 
 int main(){
-    printf("%d", isPower2(-8));
+    printf("%d", isPower2(-4));
 }

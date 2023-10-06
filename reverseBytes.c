@@ -1,16 +1,11 @@
 #include <stdio.h>
-#include <stdint.h>
 //FUNCION
 int reverseBytes(int x) {
-  int byt=x&0xf;
-  int byt2=x&0xf0;
-  int byt3=x&0xf00;
-  int byt4=x&0xf000;
-  int byt5=x&0xf0000;
-  int byt6=x&0xf00000;
-  int rever=x&0xf000000;
-  rever=(rever>>24)|(byt6>>16)|(byt5>>8)|(byt4)|(byt3<<8)|(byt2<<16)|(byt<<24);
-	return rever;
+  int byte1 = x & 0xFF;
+  int byte2 = (x >> 8) & 0xFF;
+  int byte3 = (x >> 16) & 0xFF;
+  int byte4 = (x >> 24) & 0xFF;
+  return (byte1 << 24) | (byte2 << 16) | (byte3 << 8) | byte4;
 }
 
 

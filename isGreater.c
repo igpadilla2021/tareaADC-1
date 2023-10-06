@@ -1,10 +1,7 @@
 # include <stdio.h>
 
 int test(int x, int y){
-    int mayor;
-    mayor=((!((x>>31) ^ (y>>31))+~0) & (x>>31)+1 ) | 
-    ( ((~( !( (x>>31) ^ (y>>31) ) ) )+1) & ((x+(~(y)+1))>>31)+1);
-    return mayor;
+    return (((x^y)>>31) & (x>>31)+1) | ((~((x^y)>>31)) & ((x+(~(y)+1))>>31)+1) & (~(!!(x^y))+1);
 }
 
 //TESTEO
@@ -15,7 +12,7 @@ int main(){
     printf("%d \n", test(-1,-2));
     printf("%d \n", test(1,-2));
 
-    printf("casos de inversos \n");
+    printf("casos con inversos \n");
     printf("%d \n", test(-1,1));
     printf("%d \n", test(1,-1));
 
