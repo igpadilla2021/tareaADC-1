@@ -2,14 +2,14 @@
 #include <stdint.h>
 //FUNCION
 int reverseBytes(int x) {
-  	while(x<=0x10000000){
-  		x=(x<<4);
-	  }
-	int rever=0x0;
-	for(int i=0;i<32;i=i+4){
-		int bit=(x>>i)&0xf;
-		rever=(rever<<4)|bit;
-	}
+  int byt=x&0xf;
+  int byt2=x&0xf0;
+  int byt3=x&0xf00;
+  int byt4=x&0xf000;
+  int byt5=x&0xf0000;
+  int byt6=x&0xf00000;
+  int rever=x&0xf000000;
+  rever=(rever>>24)|(byt6>>16)|(byt5>>8)|(byt4)|(byt3<<8)|(byt2<<16)|(byt<<24);
 	return rever;
 }
 
@@ -17,14 +17,13 @@ int reverseBytes(int x) {
 // TESTEO
 int main(){
 int p=0x01020304;
-    printf("%x \n",reverseBytes(p)); 
-    printf("%x \n",p); 
-    p=0x01234;
-    printf("%x \n",reverseBytes(p)); 
-    printf("%x \n",p); 
-    p=0x040A04E;
-    printf("%x \n",reverseBytes(p)); 
-    printf("%x \n",p); 
-    
-	return 0;
+printf("%x \n",reverseBytes(p)); 
+printf("%x \n",p); 
+p=0x01234;
+printf("%x \n",reverseBytes(p)); 
+printf("%x \n",p); 
+p=0x040A04E;
+printf("%x \n",reverseBytes(p)); 
+printf("%x \n",p); 
+return 0;
 }
